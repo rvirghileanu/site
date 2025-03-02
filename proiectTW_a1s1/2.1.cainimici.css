@@ -1,0 +1,245 @@
+/*INCEPUT*/
+
+body{
+    background-color: #ede8d0 ;
+    color: #301934 ;
+    font-family: "Serif", monospace, "Helvetica";
+    margin: 0;
+    padding: 0;
+}
+
+#inceput {
+    background-color: #301934;
+    color: #d291bc;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px #D291BC ;
+}
+
+#inceput > p {
+	text-decoration:underline;
+	color: #ede8d0;
+}	
+
+@keyframes pulse {
+    0% {
+        color: #d291bc;
+        text-shadow: 0 0 5px #d291bc;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #ede8d0;
+        text-shadow: 0 0 10px #ede8d0;
+    }
+    100% {
+        transform: scale(1);
+        color: #d291bc;
+        text-shadow: 0 0 5px #d291bc;
+    }
+}
+
+header h1 {
+    animation: pulse 3s infinite;
+}
+
+/* NAV */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: 	#5A0017;
+    height: 40px;
+}
+
+nav ul.meniu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ede8d0;
+    padding: 10px ;
+    display: block;
+}
+
+nav ul.meniu li ul.submeniu {
+    display: none;
+    position: absolute;
+    background-color: #c2b5a8;
+    padding: 10px 0;
+    z-index: 1000;
+    width: max-content;
+}
+
+nav ul.meniu li:hover ul.submeniu {
+    display: block;
+}
+
+nav ul.meniu li ul.submeniu li {
+    padding: 5px;
+}
+
+nav ul.meniu li ul.submeniu li a {
+    color: #5A0017;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav ul.meniu li ul.submeniu li a:hover {
+    color: #ede8d0;
+    background-color: #5A0017;
+}
+
+#adopta::before {
+    content: "❤️";
+    margin-right: 10px;
+    color: red;
+    font-size: 1.2em;
+    position: relative;
+}
+
+#acasa::after {
+    content: " 🐾";
+    margin-left: 10px;
+    font-size: 1.2em;
+    position: relative;
+}
+
+/*CONTINUT*/
+
+body{
+    overflow-x:hidden;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+p{
+    padding: 10px;
+}
+
+
+div>h2{
+    text-decoration: underline;
+    color: #301934;
+}
+
+.catelusi{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 10px;
+}
+
+.catelusi section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.catelusi section:hover{
+    border: 1px solid #d291bc;
+    border-radius: 10px;
+    background-color: #fff3da;
+    padding: 10px;
+}
+
+.catelusi section:nth-child(odd){
+    grid-column: 1;
+}
+
+.catelusi section:nth-child(even){
+    grid-column:2;
+}
+
+.catelusi img{
+    width: auto;
+    height: auto;
+    border: 5px solid #D291BC;
+    border-radius: 10px;
+}
+
+.highlight {
+    border: 2px dashed #ff9800;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+footer{
+    padding:10px;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background-color: #5A0017;
+    color: #ede8d0;
+}
+
+#aici{
+    color:#d291bc;
+}
+
+/* fac pagina responsive pentru diferite dispozitive */
+
+/* Telefoane mobile (până la 768px) */
+@media (max-width: 768px) {
+
+    .catelusi {
+        grid-template-columns: 1fr; 
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .catelusi section {
+        margin-bottom: 20px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 14px; 
+    }
+
+}
+
+/* Tablete (769px până la 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .catelusi {
+        grid-template-columns: 1fr 1fr; /* Ajustez pe 2 coloane */
+        gap: 15px; 
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .catelusi img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    footer {
+        text-align: center; 
+        padding: 15px;
+    }
+}
+
+/* Desktopuri mici si tablete mari (1025px până la 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .catelusi {
+        grid-template-columns: 1fr 1fr; /* Ajustez pentru 2 coloane */
+        padding-left: 100px; 
+        padding-right: 100px;
+    }
+
+    footer {
+        font-size: 16px; /* Fac fontul putin mai mic */
+    }
+}

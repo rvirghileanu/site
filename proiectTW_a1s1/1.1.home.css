@@ -1,0 +1,249 @@
+/*INCEPUT*/
+
+body{
+    background-color: #ede8d0 ;
+    color: #301934 ;
+    font-family: "Serif", monospace, "Helvetica";
+    margin: 0;
+    padding: 0;
+}
+
+#inceput {
+    background-color: #301934;
+    color: #d291bc;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px #D291BC ;
+}
+
+#inceput > p {
+	text-decoration:underline;
+	color: #ede8d0;
+}	
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #d291bc;
+        text-shadow: 0 0 5px #d291bc;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #ede8d0;
+        text-shadow: 0 0 10px #ede8d0;
+    }
+    100% {
+        transform: scale(1);
+        color: #d291bc;
+        text-shadow: 0 0 5px #d291bc;
+    }
+}
+
+header h1 {
+    animation: pulse 3s infinite;
+}
+
+/* NAV */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: 	#5A0017;
+    height: 40px;
+}
+
+nav ul.meniu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ede8d0;
+    padding: 10px ;
+    display: block;
+}
+
+nav ul.meniu li ul.submeniu {
+    display: none;
+    position: absolute;
+    background-color: #c2b5a8;
+    padding: 10px 0;
+    z-index: 1000;
+    width: max-content;
+}
+
+nav ul.meniu li:hover ul.submeniu {
+    display: block;
+}
+
+nav ul.meniu li ul.submeniu li {
+    padding: 5px;
+}
+
+nav ul.meniu li ul.submeniu li a {
+    color: #5A0017;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav ul.meniu li ul.submeniu li a:hover {
+    color: #ede8d0;
+    background-color: #5A0017;
+}
+
+#adopta::before {
+    content: "❤️";
+    margin-right: 10px;
+    color: red;
+    font-size: 1.2em;
+}
+
+#acasa::after {
+    content: " 🐾";
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+
+/*CONTINUT*/
+body{
+    overflow-x:hidden;
+}
+
+.prezentare {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px; 
+    background-color: #fff3da;
+    border: 2px solid #5A0017;
+    border-radius: 15px;
+    transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
+    color: #301934 ;
+}
+
+.despre_noi {
+    color:#301934;
+}
+
+.prezentare:hover {
+    transform: scale(1.05);
+    background-color: #d291bc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.prezentare p {
+    column-count: 3;         
+    column-gap: 30px;       
+    column-rule: 2px solid #5A0017; 
+    text-align: justify;
+    padding: 10px;
+    background-color: #fff3da;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+.galerie{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    box-sizing:border-box;
+    background-color: #301934;
+}
+
+.imagine{
+    margin: 0 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: .5s;
+}
+
+.imagine img{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.imagine:hover{
+    flex-basis: 50%;
+}
+
+.activa{
+    flex-basis: 50%;
+}
+
+.galerie:hover .activa{
+    flex-basis: 0;
+}
+
+.imagine:first-child:hover{
+    flex-basis: 50%
+}
+
+footer{
+    padding:10px;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background-color: #5A0017;
+    color: #ede8d0;
+}
+
+#aici{
+    color:#d291bc;
+}
+
+/* fac pagina responsive pentru diferite dispozitive */
+
+/* Telefoane mobile (până la 768px) */
+@media (max-width: 768px) {
+    nav ul.meniu {
+        flex-direction: column; /* Dispun elementele din meniu vertical */
+    }
+
+    .prezentare p {
+        column-count: 1; /* Ajustez la o singură coloană */
+    }
+
+    .galerie {
+        flex-direction: column; /* Dispun imaginile vertical */
+    }
+
+    .imagine {
+        flex-basis: 100%; 
+        height: auto; 
+    }
+
+    footer {
+        text-align: center; 
+    }
+}
+
+/* Tablete (769px până la 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .prezentare p {
+        column-count: 2; /* Reduc la 2 coloane */
+    }
+
+    .galerie .imagine img {
+        height: 40vh; 
+    }
+}
+
+/* Desktopuri mici sau tablete mari (1025px până la 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .prezentare {
+        padding: 15px; 
+    }
+
+    .galerie .imagine img {
+        height: 50vh; 
+    }
+}
